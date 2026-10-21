@@ -1,19 +1,66 @@
-# App template
+# Basilico — Pizzeria Artigianale
 
-Runable copies this Bun and Turborepo project into each new sandbox.
+Sito web responsive e menu digitale per **Basilico**, pizzeria artigianale con impasto a lenta lievitazione e ingredienti della tradizione italiana.
 
-The root package commands are the external contract:
+## Caratteristiche
 
-- `bun run dev` starts the web app.
-- `bun run dev:desktop` and `bun run dev:mobile` start platform clients.
-- `bun run build` builds every package.
-- `bun run start` starts or restarts the production server.
-- `bun run stop` stops the production server.
-- `bun run lint` and `bun run typecheck` validate the project.
-- The `db:generate`, `db:migrate`, and `db:push` commands manage the database.
+- **Design editoriale raffinato**: palette colori naturale (crema, verde basilico, terracotta), tipografia curata (*DM Serif Display* e *DM Sans*).
+- **Menu interattivo**: navigazione per portate (Pizze classiche e speciali, Antipasti, Dolci, Bevande), dettaglio allergeni espandibile per ogni proposta.
+- **Accessibilità & UX**: navigazione semantica con ARIA, pieno supporto keyboard/focus, supporto per `prefers-reduced-motion`.
+- **Responsive design**: layout ottimizzato sia per schermi desktop che per dispositivi mobile.
+- **Zero dipendenze backend**: architettura Single Page Application (SPA) autonoma e veloce, pronta per l'hosting statico (Netlify, Vercel, Cloudflare Pages, S3).
 
-Deployment tools depend on these command names. Their implementations may change, but the names must remain stable.
+## Stack Tecnologico
 
-The web package owns the API, database, and shared web interface. The mobile package is an Expo client. The desktop package is an Electron shell around the web app. Services use the fixed ports defined in `__ports.cjs`, and the web health endpoint is `/api/health`.
+- **Framework**: [React 19](https://react.dev/)
+- **Build tool**: [Vite 6](https://vitejs.dev/)
+- **Routing**: [Wouter](https://github.com/molefrog/wouter)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icone**: [Lucide React](https://lucide.dev/)
+- **Linguaggio**: [TypeScript](https://www.typescriptlang.org/)
 
-Secrets belong in the root `.env` file. Browser values must use the `VITE_` prefix. Commands prefixed with `internal:` are for template maintenance.
+## Struttura del Progetto
+
+```
+basilico/
+├── public/                 # Asset statici (immagini, font, favicon)
+│   ├── fonts/
+│   └── images/
+├── src/                    # Codice sorgente React SPA
+│   ├── pages/              # Pagine e componenti dell'applicazione (Basilico landing page)
+│   ├── App.tsx             # Componente radice con routing
+│   ├── main.tsx            # Entrypoint applicativo
+│   └── styles.css          # Foglio di stile principale e tema Tailwind
+├── index.html              # Template HTML principale
+├── vite.config.ts          # Configurazione Vite
+└── package.json            # Dipendenze e script di build
+```
+
+## Prerequisiti
+
+- [Node.js](https://nodejs.org/) versione 18 o superiore
+- [npm](https://www.npmjs.com/) (incluso con Node.js)
+
+## Avvio Rapido
+
+1. **Installazione dipendenze**:
+   ```bash
+   npm install
+   ```
+
+2. **Avvio server di sviluppo**:
+   ```bash
+   npm run dev
+   ```
+   L'applicazione sarà accessibile all'indirizzo `http://localhost:5173`.
+
+3. **Compilazione per produzione**:
+   ```bash
+   npm run build
+   ```
+   Genera i file ottimizzati nella cartella `dist/`.
+
+4. **Anteprima build di produzione**:
+   ```bash
+   npm run preview
+   ```
