@@ -15,7 +15,7 @@ footer.visit{padding-top:32px;padding-bottom:32px}
 footer.visit{row-gap:20px}
 .footer-copyright{grid-column:1/-1;text-align:left;font-size:10px;line-height:1.5;color:#c1c5ac}
 .info-dialog{position:fixed;inset:0;margin:auto;max-height:calc(100dvh - 32px);overflow-y:auto}
-.header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);padding-top:16px;padding-bottom:16px;border-bottom:1px solid #233f2b40;gap:32px;position:relative}
+.header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);padding-top:12px;padding-bottom:12px;border-bottom:1px solid #233f2b40;gap:32px;position:relative}
 .header .brand{grid-column:2;align-items:center;text-align:center}
 .header .brand>span{font-size:46px}
 .header .brand small{font-size:7px;letter-spacing:1.8px;margin-top:8px}
